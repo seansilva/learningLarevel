@@ -10,5 +10,6 @@
     <form action="#" wire:submit.prevent="$set('name','Bingo')">
         <button>ResetName</button>
     </form>
-    <button wire:click="resetName($event.target.innerText)"> ResetName</button>
+    {{-- <button wire:click="resetName($event.target.innerText)"> ResetName</button> --}}
 </div>
+

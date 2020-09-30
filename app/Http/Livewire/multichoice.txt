@@ -1,0 +1,12 @@
+on 4th sept their balance was 732,327 then they loaded 5 million on 6th sept
+
+calculate their balance on 6 by finding what they spend in 5th and 6th then subtracting from 732,327
+find their consumbption from 6th onwords and subtarct from 5m,
+add the 2 to find their balance. 
+
+
+732327 -113110 = 
+
+5000000 + 732327
+
+5,732,327 - 

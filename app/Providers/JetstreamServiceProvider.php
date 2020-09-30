@@ -9,6 +9,15 @@ use App\Actions\Jetstream\DeleteUser;
 use App\Actions\Jetstream\UpdateTeamName;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Jetstream\Jetstream;
+// use App\Models\User;
+use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Hash;
+use Laravel\Fortify\Fortify;
+use Laravel\Fortify\Actions\AttemptToAuthenticate;
+use Laravel\Fortify\Actions\EnsureLoginIsNotThrottled;
+use Laravel\Fortify\Actions\PrepareAuthenticatedSession;
+use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
+
 
 class JetstreamServiceProvider extends ServiceProvider
 {
@@ -36,6 +45,24 @@ class JetstreamServiceProvider extends ServiceProvider
         Jetstream::addTeamMembersUsing(AddTeamMember::class);
         Jetstream::deleteTeamsUsing(DeleteTeam::class);
         Jetstream::deleteUsersUsing(DeleteUser::class);
+        // Fortify::authenticateUsing(function (Request $request) {
+        //     $user = User::where('email', $request->email)->first();
+
+        //     if (
+        //         $user &&
+        //         Hash::check($request->password, $user->password)
+        //     ) {
+        //         return $user;
+        //     }
+        // });
+        // Fortify::authenticateThrough(function (Request $request) {
+        //     return array_filter([
+        //             config('fortify.limiters.login') ? null : EnsureLoginIsNotThrottled::class,
+        //             RedirectIfTwoFactorAuthenticatable::class,
+        //             AttemptToAuthenticate::class,
+        //             PrepareAuthenticatedSession::class,
+        //     ]);
+        // });
     }
 
     /**
